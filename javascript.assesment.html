@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Assessment Test - JavaScript</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 30px;
+      background-color: #e1e1e1;
+    }
+    h1, h2 {
+      text-align: center;
+      color: rgb(0, 0, 0);
+    }
+    .question {
+      display: none;
+      margin-bottom: 20px;
+      background: #afa1a1;
+      color: rgb(0, 0, 0);
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 2px 2px 6px 2px rgb(75, 79, 79);
+    }
+    .options {
+      margin-left: 20px;
+    }
+    #timer {
+      font-size: 18px;
+      text-align: center;
+      margin-bottom: 20px;
+      font-weight: bold;
+      color: rgb(0, 0, 0);
+    }
+    #result, #answersReview {
+      margin-top: 30px;
+      text-align: center;
+      font-size: 18px;
+      color: rgb(0, 0, 0);
+    }
+    .chart-container {
+  width: 300px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  font-family: sans-serif;
+  margin: 0 auto;
+}
+
+.bar {
+  height: 30px;
+  margin: 10px 0;
+  display: flex;
+  align-items: center;
+}
+
+.label {
+  width: 80px;
+  color: aqua;
+}
+
+.bar-fill {
+  height: 100%;
+  text-align: right;
+  color: white;
+  padding-right: 10px;
+  line-height: 30px;
+}
+
+.correct {
+  background-color: #4CAF50;
+  width: 0;
+}
+
+.incorrect {
+  background-color: #F44336;
+  width: 0;
+}
+
+    .course {
+      display: none;
+      width: 220px;
+      height: 40px;
+      margin: 20px auto;
+      text-align: center;
+      font-size: 16px;
+      background-color: #27f5a3;
+      color: rgb(3, 0, 0);
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+      line-height: 40px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Assessment Test - JavaScript MCQs</h1>
+<div id="timer">Time Left: 7s</div>
+
+<form id="quizForm">
+
+  <!-- Beginner to Advanced Questions with Mixed Correct Options -->
+  <div class="question" id="q1">
+    <p>1. Inside which HTML element do we put the JavaScript code?</p>
+    <div class="options">
+      <label><input type="radio" name="q1" value="A"> a) &lt;script&gt;</label><br> <!-- correct -->
+      <label><input type="radio" name="q1" value="B"> b) &lt;js&gt;</label><br>
+      <label><input type="radio" name="q1" value="C"> c) &lt;javascript&gt;</label><br>
+      <label><input type="radio" name="q1" value="D"> d) &lt;code&gt;</label>
+    </div>
+  </div>
+
+  <div class="question" id="q2">
+    <p>2. Which is the correct syntax to log "Hello" in the console?</p>
+    <div class="options">
+      <label><input type="radio" name="q2" value="A"> a) print("Hello")</label><br>
+      <label><input type="radio" name="q2" value="B"> b) console.log("Hello")</label><br> <!-- correct -->
+      <label><input type="radio" name="q2" value="C"> c) echo("Hello")</label><br>
+      <label><input type="radio" name="q2" value="D"> d) log.console("Hello")</label>
+    </div>
+  </div>
+
+  <div class="question" id="q3">
+    <p>3. JavaScript is a ___ language.</p>
+    <div class="options">
+      <label><input type="radio" name="q3" value="A"> a) Styling</label><br>
+      <label><input type="radio" name="q3" value="B"> b) Markup</label><br>
+      <label><input type="radio" name="q3" value="C"> c) Database</label><br>
+      <label><input type="radio" name="q3" value="D"> d) Programming</label><br> <!-- correct -->
+    </div>
+  </div>
+
+  <div class="question" id="q4">
+    <p>4. How do you create a function in JavaScript?</p>
+    <div class="options">
+      <label><input type="radio" name="q4" value="A"> a) function myFunction()</label><br> <!-- correct -->
+      <label><input type="radio" name="q4" value="B"> b) def myFunction()</label><br>
+      <label><input type="radio" name="q4" value="C"> c) create myFunction()</label><br>
+      <label><input type="radio" name="q4" value="D"> d) function:myFunction()</label>
+    </div>
+  </div>
+
+  <div class="question" id="q5">
+    <p>5. How do you call a function named <code>myFunction</code>?</p>
+    <div class="options">
+      <label><input type="radio" name="q5" value="A"> a) myFunction()</label><br> <!-- correct -->
+      <label><input type="radio" name="q5" value="B"> b) myFunction.call()</label><br>
+      <label><input type="radio" name="q5" value="C"> c) Call.myFunction()</label><br>
+      <label><input type="radio" name="q5" value="D"> d) call myFunction</label>
+    </div>
+  </div>
+
+  <div class="question" id="q6">
+    <p>6. Which symbol is used for single-line comments in JavaScript?</p>
+    <div class="options">
+      <label><input type="radio" name="q6" value="A"> a) //</label><br> <!-- correct -->
+      <label><input type="radio" name="q6" value="B"> b) #</label><br>
+      <label><input type="radio" name="q6" value="C"> c) &lt;!-- --&gt;</label><br>
+      <label><input type="radio" name="q6" value="D"> d) *</label>
+    </div>
+  </div>
+
+  <div class="question" id="q7">
+    <p>7. What does <code>typeof</code> return for an array?</p>
+    <div class="options">
+      <label><input type="radio" name="q7" value="A"> a) list</label><br>
+      <label><input type="radio" name="q7" value="B"> b) array</label><br>
+      <label><input type="radio" name="q7" value="C"> c) undefined</label><br>
+      <label><input type="radio" name="q7" value="D"> d) object</label><br> <!-- correct -->
+    </div>
+  </div>
+
+  <div class="question" id="q8">
+    <p>8. Which function converts a string to an integer?</p>
+    <div class="options">
+      <label><input type="radio" name="q8" value="A"> a) stringToInt()</label><br>
+      <label><input type="radio" name="q8" value="B"> b) parseInt()</label><br> <!-- correct -->
+      <label><input type="radio" name="q8" value="C"> c) convert()</label><br>
+      <label><input type="radio" name="q8" value="D"> d) Integer()</label>
+    </div>
+  </div>
+
+  <div class="question" id="q9">
+    <p>9. What is the output of <code>typeof NaN</code>?</p>
+    <div class="options">
+      <label><input type="radio" name="q9" value="A"> a) NaN</label><br>
+      <label><input type="radio" name="q9" value="B"> b) undefined</label><br>
+      <label><input type="radio" name="q9" value="C"> c) object</label><br>
+      <label><input type="radio" name="q9" value="D"> d) number</label><br> <!-- correct -->
+    </div>
+  </div>
+
+  <div class="question" id="q10">
+    <p>10. Which keyword is used to declare a block-scoped variable?</p>
+    <div class="options">
+      <label><input type="radio" name="q10" value="A"> a) define</label><br>
+      <label><input type="radio" name="q10" value="B"> b) let</label><br> <!-- correct -->
+      <label><input type="radio" name="q10" value="C"> c) var</label><br>
+      <label><input type="radio" name="q10" value="D"> d) static</label>
+    </div>
+  </div>
+
+  <div class="question" id="q11">
+    <p>11. What will be the result of: <code>Boolean("")</code>?</p>
+    <div class="options">
+      <label><input type="radio" name="q11" value="A"> a) true</label><br>
+      <label><input type="radio" name="q11" value="B"> b) null</label><br>
+      <label><input type="radio" name="q11" value="C"> c) NaN</label><br>
+      <label><input type="radio" name="q11" value="D"> d) false</label><br> <!-- correct -->
+    </div>
+  </div>
+
+  <div class="question" id="q12">
+    <p>12. Which array method removes the last element from an array?</p>
+    <div class="options">
+      <label><input type="radio" name="q12" value="A"> a) unshift()</label><br>
+      <label><input type="radio" name="q12" value="B"> b) shift()</label><br>
+      <label><input type="radio" name="q12" value="C"> c) pop()</label><br> <!-- correct -->
+      <label><input type="radio" name="q12" value="D"> d) remove()</label>
+    </div>
+  </div>
+
+  <div class="question" id="q13">
+    <p>13. What is a closure in JavaScript?</p>
+    <div class="options">
+      <label><input type="radio" name="q13" value="A"> a) A closed function</label><br>
+      <label><input type="radio" name="q13" value="B"> b) A function having access to parent scope even after parent function closes</label><br> <!-- correct -->
+      <label><input type="radio" name="q13" value="C"> c) A syntax error</label><br>
+      <label><input type="radio" name="q13" value="D"> d) A callback</label>
+    </div>
+  </div>
+
+  <div class="question" id="q14">
+    <p>14. Which method is used to delay execution of a function?</p>
+    <div class="options">
+      <label><input type="radio" name="q14" value="A"> a) setTimeout()</label><br> <!-- correct -->
+      <label><input type="radio" name="q14" value="B"> b) sleep()</label><br>
+      <label><input type="radio" name="q14" value="C"> c) wait()</label><br>
+      <label><input type="radio" name="q14" value="D"> d) delay()</label>
+    </div>
+  </div>
+
+  <div class="question" id="q15">
+    <p>15. What is the correct way to write an arrow function in JavaScript?</p>
+    <div class="options">
+      <label><input type="radio" name="q15" value="A"> a) const add => (a, b) a + b;</label><br>
+      <label><input type="radio" name="q15" value="B"> b) add = (a, b) -> a + b;</label><br>
+      <label><input type="radio" name="q15" value="C"> c) const add = (a, b) => a + b;</label><br> <!-- correct -->
+      <label><input type="radio" name="q15" value="D"> d) function add(a, b) => a + b;</label>
+    </div>
+  </div>
+</form>
+
+<div id="result"></div>
+<div class="chart-container" id="chartContainer" style="display: none;">
+  <h3>Quiz Performance</h3>
+  <div class="bar">
+    <div class="label">Correct</div>
+    <div class="bar-fill correct" id="correctBar">0</div>
+  </div>
+  <div class="bar">
+    <div class="label">Incorrect</div>
+    <div class="bar-fill incorrect" id="incorrectBar">0</div>
+  </div>
+</div>
+
+<div id="answersReview"></div>
+
+<a href="https://home.sangarsh.in/courses/javascript/" class="course" id="courseBeginner">Go To Course</a>
+
+<script>
+  const totalQuestions = 15;
+  const correctAnswers = {
+    q1: "A",q2: "B",q3: "D",q4: "A",q5: "A",q6: "A",q7: "D",
+    q8: "B",q9: "D",q10: "B",q11: "D",q12: "C",q13: "B",q14: "A",q15: "C"
+  };
+
+  let current = 1;
+  let timer = 7;
+  let interval;
+  let userAnswers = {};
+  let score = 0;
+
+  function showQuestion(qNum) {
+    document.querySelectorAll('.question').forEach(q => q.style.display = 'none');
+    let questionDiv = document.getElementById("q" + qNum);
+    if (questionDiv) questionDiv.style.display = 'block';
+  }
+
+  function startTimer() {
+    document.getElementById("timer").textContent = `Time Left: ${timer}s`;
+    interval = setInterval(() => {
+      timer--;
+      document.getElementById("timer").textContent = `Time Left: ${timer}s`;
+      if (timer === 0) {
+        saveAnswer();
+        nextQuestion();
+      }
+    }, 1000);
+  }
+
+  function saveAnswer() {
+    const selected = document.querySelector(`input[name="q${current}"]:checked`);
+    userAnswers["q" + current] = selected ? selected.value : null;
+  }
+
+  function nextQuestion() {
+    clearInterval(interval);
+    if (current < totalQuestions) {
+      current++;
+      timer = 7;
+      showQuestion(current);
+      startTimer();
+    } else {
+      finishQuiz();
+    }
+  }
+
+  function checkAnswers(){
+    // Show chart
+document.getElementById("chartContainer").style.display = "block";
+
+// Set chart values
+const totalQuestions = 15;
+const correct = score;
+const incorrect = totalQuestions - score;
+
+document.getElementById("correctBar").textContent = correct;
+document.getElementById("incorrectBar").textContent = incorrect;
+document.getElementById("correctBar").style.width = (correct / totalQuestions * 100) + "%";
+document.getElementById("incorrectBar").style.width = (incorrect / totalQuestions * 100) + "%";
+
+  }
+
+  function finishQuiz() {
+    document.getElementById("timer").style.display = 'none';
+    document.querySelectorAll('.question').forEach(q => q.style.display = 'none');
+
+    let review = "";
+    score = 0;
+
+    for (let i = 1; i <= totalQuestions; i++) {
+      const userAnswer = userAnswers["q" + i];
+      const correct = correctAnswers["q" + i];
+      const status = userAnswer === correct ? "✅ Correct" : `❌ Incorrect (Correct: ${correct})`;
+      if (userAnswer === correct) score++;
+      review += `<p>Q${i}: ${status}</p>`;
+    }
+
+    let resultText = "";
+    if (score >= 12) {
+      resultText = `🎉 Grade A - Excellent! You scored ${score}/15.`;
+      document.getElementById("courseBeginner").style.display = "block";
+    } else if (score >= 9) {
+      resultText = `✅ Grade B - Good job! You scored ${score}/15.`;
+      document.getElementById("courseBeginner").style.display = "block";
+    } else if (score >= 6) {
+      resultText = `🙂 Grade C - Fair understanding. You scored ${score}/15.`;
+      document.getElementById("courseBeginner").style.display = "block";
+    } else {
+      resultText = `📝 Grade D - Keep learning! You scored ${score}/15.`;
+      document.getElementById("courseBeginner").style.display = "block";
+    }
+
+    document.getElementById("result").innerHTML = resultText;
+    document.getElementById("answersReview").innerHTML = review;
+    checkAnswers();
+  }
+
+  //Start quiz
+  showQuestion(current);
+  startTimer();
+</script>
+
+</body>
+</html>
